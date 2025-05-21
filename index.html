@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Password Generator</h1>
+        
+        <div class="password-display">
+            <div class="password-text" id="password-output" aria-live="polite">Your password will appear here</div>
+            <button class="copy-btn" id="copy-btn" title="Copy to clipboard" aria-label="Copy password">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <div class="slider-container">
+            <div class="slider-header">
+                <label class="slider-label" for="length-slider">Password Length</label>
+                <span class="slider-value" id="length-value" aria-live="polite">12</span>
+            </div>
+            <input type="range" id="length-slider" min="4" max="32" value="12" aria-valuemin="4" aria-valuemax="32" aria-valuenow="12">
+        </div>
+        
+        <div class="options-container">
+            <div class="option">
+                <label for="uppercase-check">Uppercase Letters (A-Z)</label>
+                <input type="checkbox" id="uppercase-check" checked>
+            </div>
+            <div class="option">
+                <label for="lowercase-check">Lowercase Letters (a-z)</label>
+                <input type="checkbox" id="lowercase-check" checked>
+            </div>
+            <div class="option">
+                <label for="numbers-check">Numbers (0-9)</label>
+                <input type="checkbox" id="numbers-check" checked>
+            </div>
+            <div class="option">
+                <label for="symbols-check">Symbols</label>
+                <input type="checkbox" id="symbols-check">
+            </div>
+            <div class="option symbols-input" id="custom-symbols-container" hidden>
+                <label for="custom-symbols">Custom Symbols (e.g., !@#)</label>
+                <input type="text" id="custom-symbols" placeholder="Enter symbols">
+            </div>
+            <div class="option">
+                <label for="exclude-similar-check">Exclude Similar Characters (l, 1, I, O, 0)</label>
+                <input type="checkbox" id="exclude-similar-check">
+            </div>
+            <div class="error-message" id="error-message" aria-live="assertive" hidden></div>
+        </div>
+        
+        <div class="strength-meter">
+            <div class="strength-title">
+                <span class="strength-label">Password Strength</span>
+                <span class="strength-text" id="strength-text" aria-live="polite">Medium</span>
+            </div>
+            <div class="strength-bars" id="strength-bars">
+                <div class="strength-bar bar-active"></div>
+                <div class="strength-bar bar-active"></div>
+                <div class="strength-bar"></div>
+                <div class="strength-bar"></div>
+            </div>
+        </div>
+        
+        <button class="generate-btn" id="generate-btn" aria-label="Generate password">Generate Password</button>
+        
+        <div class="history-container">
+            <button class="history-toggle" id="history-toggle" aria-expanded="false">Show Password History</button>
+            <div class="history-list" id="history-list" hidden aria-live="polite"></div>
+        </div>
+    </div>
+    
+    <div class="notification" id="notification" role="alert" aria-live="assertive">
+        Password copied to clipboard!
+    </div>
+    
+    <footer>
+        <p>Securely generate random passwords with customizable options</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
