@@ -1,5 +1,7 @@
 # Password Generator
 
+![image](https://github.com/user-attachments/assets/6a65c1a9-5413-4f95-b5bd-f8a163fdfaae)
+
 A secure, lightweight, and customizable password generator built with vanilla HTML, CSS, and JavaScript. This client-side application generates random passwords with flexible options, runs entirely offline, and is optimized for mobile IDEs like Acode. It features an entropy-based strength meter, password history, and accessibility support, making it a robust tool for creating strong passwords.
 
 ## Motivation
